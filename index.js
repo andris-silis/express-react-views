@@ -38,7 +38,7 @@ function createEngine(engineOptions) {
       // Transpiled ES6 may export components as { default: Component }
       component = component.default || component;
       component = React.createFactory(component);
-      if (staticMarkup) {
+      if (engineOptions.staticMarkup) {
         markup += React.renderToStaticMarkup(component(options));        
       } else {
         markup += React.renderToString(component(options));        
